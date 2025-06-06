@@ -1,3 +1,4 @@
+/** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "recharts", "framer-motion", "@radix-ui/react-icons"],
@@ -40,6 +41,10 @@ const nextConfig = {
       },
     ]
   },
+  // Ensure proper asset handling
+  assetPrefix: process.env.NODE_ENV === 'production' ? undefined : undefined,
+  basePath: '',
+  trailingSlash: false,
 }
 
 module.exports = nextConfig
